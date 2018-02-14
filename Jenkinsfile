@@ -4,10 +4,7 @@ node {
 
   stage 'Stage Build'
 
-  echo "My branch is: ${env.BRANCH_NAME}"
-
-  def flavor = flavor(env.BRANCH_NAME)
-  echo "Building flavor ${flavor}"
+  echo "Environment: ${env}"
 
   sh "./gradlew clean prepareDocker"
 }
