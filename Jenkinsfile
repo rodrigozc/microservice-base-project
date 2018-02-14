@@ -1,15 +1,15 @@
 node {
 
-  stage "Stage Checkout" {
+  stage "Checkout" {
     def scmVars = checkout scm
     echo "${scmVars}"
   }
 
-  stage "Show Environment" {
+  stage "Environment" {
     echo "sh 'printenv'"
   }
 
-  stage "Stage Build" {
+  stage "Build" {
     sh "./gradlew clean prepareDocker"
   }
 
