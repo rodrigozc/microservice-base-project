@@ -1,0 +1,11 @@
+{
+  "service": {
+    "name": "spring-base-microservice",
+    "port": 8080,
+    "check": {
+	    "name": "Health Check",
+	    "http": "http://localhost:8080/health",
+	    "interval": "10s"
+	  }
+  }
+}

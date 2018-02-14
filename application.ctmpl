@@ -1,0 +1,3 @@
+server:
+  port:
+    {{ printf "%s/server/port" (env "APPLICATION_NAME") | key }}
