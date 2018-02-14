@@ -1,10 +1,8 @@
 node {
-
   def scmVars = checkout scm
   echo "${scmVars}"
-
-  echo "sh 'printenv'"
-
+  scmVars.GIT_COMMIT
   sh "./gradlew clean prepareDocker"
-
+  def image = docker.build("rodrigozc/microservice-base-project:${env.BUILD_ID}")
+  customImage.push("latest")
 }
