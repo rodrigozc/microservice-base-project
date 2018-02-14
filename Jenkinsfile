@@ -1,4 +1,7 @@
 node {
+  dockerfile {
+    filename 'build/docker/Dockerfile'
+  }
   def scmVars = checkout scm
   echo "${scmVars}"
   scmVars.GIT_COMMIT
