@@ -26,7 +26,7 @@ public class MicroserviceApplicationTests {
 		mvc.perform(get("/v1/info").contentType(MediaType.TEXT_PLAIN))
 				.andExpect(status().isOk())
 				.andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_PLAIN))
-				.andExpect(content().string("Microservice Base Projec"));
+				.andExpect(content().string("Microservice Base Project"));
 	}
 
 }
