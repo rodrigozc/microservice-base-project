@@ -16,7 +16,6 @@ node {
         }
 
         def docker_tag = 'latest'
-        def docker_tag = 'latest'
         if (env.BRANCH_NAME != 'develop' && env.BRANCH_NAME != 'master') {
             docker_tag = env.BRANCH_NAME
             docker_host = 'tcp://10.100.2.54:4243'
