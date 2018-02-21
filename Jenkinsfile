@@ -10,11 +10,6 @@ node {
         checkout scm
         echo "Branch: ${env.BRANCH_NAME}"
 
-        sh 'env > env.txt'
-        for (String i : readFile('env.txt').split("\r?\n")) {
-          println i
-        }
-
         def docker_tag = 'latest'
         if (env.BRANCH_NAME != 'develop' && env.BRANCH_NAME != 'master') {
             docker_tag = env.BRANCH_NAME
