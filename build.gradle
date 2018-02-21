@@ -9,6 +9,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'jacoco'
 apply plugin: 'org.springframework.boot'
 
 repositories {
@@ -27,7 +28,7 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-task prepareDocker(type: Copy, dependsOn: build) {
+task prepareDocker(type: Copy, dependsOn: [build, jacocoTestReport]) {
     from jar
     from 'Dockerfile'
     from('.') {
